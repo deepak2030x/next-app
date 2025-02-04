@@ -1,18 +1,15 @@
-import Link from "next/link";
-import { inititalTickets } from "@/data";
-import { ticketPath } from "@/paths";
+import { Suspense } from "react";
+import { Heading } from "@/components/heading";
+import { Spinner } from "@/components/spinner";
+import { TicketList } from "@/features/ticket/components/ticket-list";
 
 const TicketsPage = () => {
   return (
-    <div>
-      {inititalTickets.map((ticket) => (
-        <div key={ticket.id}>
-          <h2>{ticket.title}</h2>
-          <Link href={ticketPath(ticket.id)} className="underline">
-            View
-          </Link>
-        </div>
-      ))}
+    <div className="flex-1 flex flex-col gap-y-8">
+      <Heading title="Tickets" description="All your tickets at one place" />
+      <Suspense fallback={<Spinner />}>
+        <TicketList />
+      </Suspense>
     </div>
   );
 };
