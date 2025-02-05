@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { LucideMessageSquareWarning } from "lucide-react";
-import { cloneElement } from "react";
+import { cloneElement, ReactElement } from "react";
 
 type PlaceholderProps = {
   label: string;
-  icon?: React.ReactElement<unknown>;
-  button?: React.ReactElement;
+  icon?: ReactElement<any, any>;
+  button?: ReactElement<any, any>;
 };
 
 const PlaceHolder = ({
