@@ -4,7 +4,7 @@ import { cloneElement } from "react";
 type PlaceholderProps = {
   label: string;
   icon?: React.ReactElement<unknown>;
-  button: React.ReactNode;
+  button?: React.ReactElement;
 };
 
 const PlaceHolder = ({
